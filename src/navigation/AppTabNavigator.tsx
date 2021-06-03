@@ -13,28 +13,66 @@ import { routes } from "./routes";
 import AIcon from "react-native-vector-icons/AntDesign";
 import EIcon from "react-native-vector-icons/Entypo";
 
+import { COLORS } from "../styles";
+import { TabBarIcon } from "../components";
+
+//ionicons home home-outline wallet- wallet-outline pricetag-prictag- outline menu menu-outline
+
 const Tab = createBottomTabNavigator();
 
 const AppTabNavigator = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      tabBarOptions={{
+        activeTintColor: COLORS.secondary,
+        inactiveTintColor: COLORS.grey,
+        labelStyle: { fontSize: 12 },
+      }}>
       <Tab.Screen
         options={{
-          tabBarIcon: ({ focused }) => <AIcon name="home" />,
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon name="home" active={focused} />
+          ),
         }}
         name={routes.HOME}
         component={HomeScreen}
       />
       <Tab.Screen
         options={{
-          tabBarIcon: ({ focused }) => <EIcon name="shopping-cart" />,
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon name="cart" active={focused} />
+          ),
         }}
         name={routes.BUY}
         component={BuyScreen}
       />
-      <Tab.Screen name={routes.DEALS} component={DealsScreen} />
-      <Tab.Screen name={routes.WALLET} component={WalletScreen} />
-      <Tab.Screen name={routes.MORE} component={MoreScreen} />
+      <Tab.Screen
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon name="pricetag" active={focused} />
+          ),
+        }}
+        name={routes.DEALS}
+        component={DealsScreen}
+      />
+      <Tab.Screen
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon name="wallet" active={focused} />
+          ),
+        }}
+        name={routes.WALLET}
+        component={WalletScreen}
+      />
+      <Tab.Screen
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon name="menu" active={focused} />
+          ),
+        }}
+        name={routes.MORE}
+        component={MoreScreen}
+      />
     </Tab.Navigator>
   );
 };
