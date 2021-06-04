@@ -14,16 +14,6 @@ export const CartScreen = ({ navigation }: any) => {
   const { history } = useSelector((state: State) => state.history);
   const [totalPrice, setTotalPrice] = useState(0);
 
-  console.log("hist", history);
-
-  // if (!cart.length) {
-  //   return (
-  //     <View style={styles.noItemsContainer}>
-  //       <Text style={styles.noItemsText}>No items in cart</Text>
-  //     </View>
-  //   );
-  // }
-
   useEffect(() => {
     if (!cart.length) {
       return;

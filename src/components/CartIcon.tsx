@@ -13,8 +13,6 @@ export const CartIcon = () => {
 
   const { cart } = useSelector((state: State) => state.cart);
 
-  console.log(cart);
-
   return (
     <TouchableOpacity
       onPress={() =>

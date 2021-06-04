@@ -16,8 +16,6 @@ import EIcon from "react-native-vector-icons/Entypo";
 import { COLORS } from "../styles";
 import { TabBarIcon } from "../components";
 
-//ionicons home home-outline wallet- wallet-outline pricetag-prictag- outline menu menu-outline
-
 const Tab = createBottomTabNavigator();
 
 const AppTabNavigator = () => {
