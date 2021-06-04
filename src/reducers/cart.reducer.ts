@@ -21,6 +21,27 @@ const cartReducer = (
       return { cart };
     }
 
+    case types.INC_QUANTITY: {
+      const cart = state.cart.map((item: Cart) =>
+        item.id === payload ? { ...item, quantity: item.quantity + 1 } : item,
+      );
+
+      return { cart };
+    }
+
+    case types.DEC_QUANTITY: {
+      const cart = state.cart.map((item: Cart) =>
+        item.id === payload
+          ? {
+              ...item,
+              quantity: item.quantity - 1,
+            }
+          : item,
+      );
+
+      return { cart };
+    }
+
     case types.CHECKOUT: {
       return { cart: [] };
     }

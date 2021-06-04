@@ -6,7 +6,7 @@ import { scale } from "react-native-size-matters";
 import { useDispatch } from "react-redux";
 
 import { COLORS } from "../styles";
-import { removeFromCart } from "../actions/cart";
+import { removeFromCart, incQty, decQty } from "../actions";
 
 export const Cart = ({ product }: { product: Cart }) => {
   const dispatch = useDispatch();
@@ -31,11 +31,13 @@ export const Cart = ({ product }: { product: Cart }) => {
         </TouchableOpacity>
 
         <View style={styles.qtyActionContainer}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            disabled={quantity <= 1}
+            onPress={() => dispatch(decQty(id))}>
             <AIcons name="minuscircleo" color={COLORS.purple} size={18} />
           </TouchableOpacity>
           <Text style={styles.quantity}>{quantity}</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => dispatch(incQty(id))}>
             <AIcons name="pluscircleo" color={COLORS.purple} size={18} />
           </TouchableOpacity>
         </View>

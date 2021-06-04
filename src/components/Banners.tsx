@@ -46,6 +46,7 @@ export const Banners = () => {
         data={banners}
         horizontal
         keyExtractor={item => item.id}
+        showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => (
           <Banner
             color={item.color}
