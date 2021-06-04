@@ -10,9 +10,6 @@ import {
   MoreScreen,
 } from "../screens";
 import { routes } from "./routes";
-import AIcon from "react-native-vector-icons/AntDesign";
-import EIcon from "react-native-vector-icons/Entypo";
-
 import { COLORS } from "../styles";
 import { TabBarIcon } from "../components";
 

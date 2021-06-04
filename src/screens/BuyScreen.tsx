@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { scale } from "react-native-size-matters";
 
@@ -14,7 +14,6 @@ import { products } from "../assets/data/products";
 
 export const BuyScreen = () => {
   const [filteredProducts, setFilteredProducts] = useState(products);
-  const [location, setLocation] = useState("");
 
   const filterProducts = (searchTerm: string) => {
     setFilteredProducts(

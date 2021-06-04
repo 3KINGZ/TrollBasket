@@ -1,7 +1,6 @@
 /* eslint-disable react/display-name */
 import React from "react";
 import { View, Text, FlatList } from "react-native";
-import { scale, verticalScale } from "react-native-size-matters";
 
 import { COLORS } from "../styles";
 import { Banner } from "./Banner";
