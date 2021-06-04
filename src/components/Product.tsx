@@ -13,7 +13,7 @@ import { useDispatch } from "react-redux";
 import { routes } from "../navigation/routes";
 import { addToHistory } from "../actions/history";
 
-const width = Dimensions.get("screen").width / 3;
+const WIDTH = Dimensions.get("screen").width / 3;
 
 export const Product = ({ product }: { product: Product }) => {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ export const Product = ({ product }: { product: Product }) => {
   const { id, image, name, price, stock } = product;
 
   const _addToHistory = () => {
-    dispatch(addToHistory);
+    dispatch(addToHistory(product));
     navigation.navigate(routes.DETAIL, {
       screen: routes.PRODUCT_DETAIL,
       params: { id },
@@ -43,7 +43,7 @@ export const Product = ({ product }: { product: Product }) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: width - 20,
+    width: WIDTH - 20,
     marginHorizontal: 10,
     marginVertical: 10,
     alignItems: "center",

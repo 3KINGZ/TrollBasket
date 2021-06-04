@@ -3,11 +3,14 @@ import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 import IIcons from "react-native-vector-icons/Ionicons";
 import AIcons from "react-native-vector-icons/AntDesign";
 import { scale } from "react-native-size-matters";
+import { useDispatch } from "react-redux";
 
 import { COLORS } from "../styles";
+import { removeFromCart } from "../actions/cart";
 
 export const Cart = ({ product }: { product: Cart }) => {
-  const { image, name, price, quantity } = product;
+  const dispatch = useDispatch();
+  const { id, image, name, price, quantity } = product;
 
   return (
     <View style={styles.container}>
@@ -20,11 +23,11 @@ export const Cart = ({ product }: { product: Cart }) => {
       </View>
 
       <View style={styles.actionContainer}>
-        <TouchableOpacity>
-          <View style={styles.deleteContainer}>
-            <IIcons name="trash-bin" color="#E25959" size={18} />
-            <Text style={styles.deleteText}>Delete</Text>
-          </View>
+        <TouchableOpacity
+          onPress={() => dispatch(removeFromCart(id))}
+          style={styles.deleteContainer}>
+          <IIcons name="trash-bin" color="#E25959" size={18} />
+          <Text style={styles.deleteText}>Delete</Text>
         </TouchableOpacity>
 
         <View style={styles.qtyActionContainer}>

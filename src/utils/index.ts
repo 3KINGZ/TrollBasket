@@ -15,3 +15,11 @@ export const parseRating = (rating: number): number => {
     return 1;
   }
 };
+
+export const getTotalPrice = (cart: Cart[]) => {
+  let price = 0;
+  for (let i = 0; i < cart.length; i++) {
+    price += cart[i].price * cart[i].quantity;
+  }
+  return price;
+};

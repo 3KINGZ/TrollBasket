@@ -13,7 +13,7 @@ export const CheckoutScreen = ({ navigation }: any) => {
   const dispatch = useDispatch();
 
   const clearCart = () => {
-    dispatch(checkout);
+    dispatch(checkout());
     navigation.navigate(routes.APP_TAB, {
       screen: routes.BUY,
     });
@@ -21,11 +21,20 @@ export const CheckoutScreen = ({ navigation }: any) => {
 
   return (
     <>
-      <StatusBar barStyle="dark-content" backgroundColor={COLORS.secondary} />
+      <StatusBar barStyle="light-content" backgroundColor={COLORS.secondary} />
       <View style={styles.container}>
         <Icon name="checkcircle" color="#46BCAA" size={200} />
-        <Text>Checkout Successful</Text>
-        <Text>Your checkout is now successful</Text>
+        <Text
+          style={{
+            fontSize: scale(36),
+            color: COLORS.primary,
+            fontWeight: "bold",
+          }}>
+          Checkout Successful
+        </Text>
+        <Text style={{ fontSize: scale(16), color: COLORS.primary }}>
+          Your checkout is now successful
+        </Text>
         <Button
           title="Got it"
           size="md"

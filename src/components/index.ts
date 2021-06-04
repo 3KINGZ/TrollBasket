@@ -9,3 +9,4 @@ export * from "./ActionButtons";
 export * from "./CartIcon";
 export * from "./Carts";
 export * from "./Button";
+export * from "./IconContainer";
