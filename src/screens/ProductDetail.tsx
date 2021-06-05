@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 
 import { COLORS, FONTS } from "../styles";
 import { Reviews, ActionButtons } from "../components";
-import { addToCart } from "../actions/cart";
+import { addToCart } from "../actions";
 import { products } from "../assets/data/products";
 
 export const ProductDetail = ({ route }: any) => {
