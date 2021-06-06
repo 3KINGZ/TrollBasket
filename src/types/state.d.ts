@@ -1,4 +1,4 @@
 interface State {
-  cart: { cart: [] };
-  history: { history: [] };
+  cart: { cart: Cart[] };
+  history: { history: Product[] };
 }
