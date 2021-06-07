@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/core";
 import { useDispatch } from "react-redux";
+import formatNaira from "format-to-naira";
 
 import { routes } from "../navigation/routes";
 import { addToHistory } from "../actions/history";
@@ -34,7 +35,7 @@ export const Product = ({ product }: { product: Product }) => {
       <View style={styles.mainContainer}>
         <Image source={image} style={{ width: 80, height: 78 }} />
         <Text style={[styles.text]}>{name}</Text>
-        <Text style={[styles.text]}>{price}</Text>
+        <Text style={[styles.price]}>{formatNaira(price)}</Text>
         <Text style={[styles.text]}>MOQ {stock} (pieces)</Text>
       </View>
     </TouchableOpacity>
@@ -60,4 +61,8 @@ const styles = StyleSheet.create({
   text: {
     textAlign: "center",
   },
+  price:{
+    textAlign: "center",
+    fontWeight:"bold"
+  }
 });
