@@ -61,8 +61,8 @@ const styles = StyleSheet.create({
   text: {
     textAlign: "center",
   },
-  price:{
+  price: {
     textAlign: "center",
-    fontWeight:"bold"
-  }
+    fontWeight: "bold",
+  },
 });
